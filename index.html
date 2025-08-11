@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathFinder - Your Educational Journey Starts Here</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-compass"></i>
+                <span>PathFinder</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Discover Your 
+                    <span class="gradient-text">Educational Path</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Navigate your future with confidence. Our interactive questionnaire helps you find the perfect educational journey after primary school.
+                </p>
+                <button class="cta-button" onclick="startQuestionnaire()">
+                    <i class="fas fa-rocket"></i>
+                    Start Your Journey
+                </button>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="card card-1">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Academic</span>
+                    </div>
+                    <div class="card card-2">
+                        <i class="fas fa-tools"></i>
+                        <span>Technical</span>
+                    </div>
+                    <div class="card card-3">
+                        <i class="fas fa-palette"></i>
+                        <span>Creative</span>
+                    </div>
+                    <div class="card card-4">
+                        <i class="fas fa-handshake"></i>
+                        <span>Business</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questionnaire Section -->
+        <section id="questionnaire" class="questionnaire hidden">
+            <div class="questionnaire-container">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                    <span class="progress-text">Question <span id="current-question">1</span> of <span id="total-questions">8</span></span>
+                </div>
+                
+                <div class="question-card">
+                    <h2 class="question-title" id="question-title">Loading...</h2>
+                    <p class="question-subtitle" id="question-subtitle">Please select the option that best describes you</p>
+                    
+                    <div class="answers-grid" id="answers-grid">
+                        <!-- Dynamic answers will be inserted here -->
+                    </div>
+                    
+                    <div class="question-navigation">
+                        <button class="nav-button prev-button" onclick="previousQuestion()" disabled>
+                            <i class="fas fa-arrow-left"></i>
+                            Previous
+                        </button>
+                        <button class="nav-button next-button" onclick="nextQuestion()" disabled>
+                            Next
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="results hidden">
+            <div class="results-container">
+                <div class="results-header">
+                    <h2 class="results-title">Your Recommended Paths</h2>
+                    <p class="results-subtitle">Based on your answers, here are the educational paths that align with your interests and strengths</p>
+                </div>
+                
+                <div class="paths-grid" id="paths-grid">
+                    <!-- Dynamic path recommendations will be inserted here -->
+                </div>
+                
+                <div class="results-actions">
+                    <button class="secondary-button" onclick="retakeQuiz()">
+                        <i class="fas fa-redo"></i>
+                        Retake Quiz
+                    </button>
+                    <button class="primary-button" onclick="downloadResults()">
+                        <i class="fas fa-download"></i>
+                        Download Results
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about-content">
+                <h2 class="section-title">How It Works</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-question"></i>
+                        </div>
+                        <h3>Answer Questions</h3>
+                        <p>Complete our comprehensive questionnaire about your interests, strengths, and career aspirations.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI Analysis</h3>
+                        <p>Our intelligent system analyzes your responses to understand your unique profile and preferences.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3>Get Recommendations</h3>
+                        <p>Receive personalized educational path recommendations tailored to your profile and goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <i class="fas fa-compass"></i>
+                <span>PathFinder</span>
+            </div>
+            <p>&copy; 2024 PathFinder. Helping students navigate their educational journey.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
