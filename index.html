@@ -1,165 +1,606 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PathFinder - Your Educational Journey Starts Here</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <i class="fas fa-compass"></i>
-                <span>PathFinder</span>
-            </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PathFinder - Discover Your Educational Journey</title>
+    <meta
+      name="description"
+      content="Discover your perfect educational path with our comprehensive AI-powered assessment. Get personalized recommendations for your academic journey."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header with Apple Navigation -->
+    <header class="header" id="header">
+      <nav class="nav">
+        <a href="#home" class="nav-brand">
+          <i class="fas fa-compass"></i>
+          PathFinder
+        </a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#programs">Programs</a>
+          <a href="#about">Features</a>
+          <a href="#contact">About</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
     </header>
 
-    <!-- Main Content -->
     <main class="main">
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Discover Your 
-                    <span class="gradient-text">Educational Path</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Navigate your future with confidence. Our interactive questionnaire helps you find the perfect educational journey after primary school.
-                </p>
-                <button class="cta-button" onclick="startQuestionnaire()">
-                    <i class="fas fa-rocket"></i>
-                    Start Your Journey
-                </button>
-            </div>
-            <div class="hero-visual">
-                <div class="floating-cards">
-                    <div class="card card-1">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Academic</span>
-                    </div>
-                    <div class="card card-2">
-                        <i class="fas fa-tools"></i>
-                        <span>Technical</span>
-                    </div>
-                    <div class="card card-3">
-                        <i class="fas fa-palette"></i>
-                        <span>Creative</span>
-                    </div>
-                    <div class="card card-4">
-                        <i class="fas fa-handshake"></i>
-                        <span>Business</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- Hero Section - Apple Premium Design -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              Discover Your
+              <span class="gradient-text">Perfect</span>
+              Educational Path
+            </h1>
+            <p class="hero-subtitle">
+              Take our comprehensive AI-powered assessment to find personalized
+              educational recommendations tailored to your unique interests,
+              strengths, and career aspirations.
+            </p>
+            <button
+              class="cta-button"
+              onclick="startQuestionnaire()"
+              aria-label="Start assessment"
+            >
+              <span>Start Your Journey</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
 
-        <!-- Questionnaire Section -->
-        <section id="questionnaire" class="questionnaire hidden">
-            <div class="questionnaire-container">
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                    <span class="progress-text">Question <span id="current-question">1</span> of <span id="total-questions">8</span></span>
-                </div>
-                
-                <div class="question-card">
-                    <h2 class="question-title" id="question-title">Loading...</h2>
-                    <p class="question-subtitle" id="question-subtitle">Please select the option that best describes you</p>
-                    
-                    <div class="answers-grid" id="answers-grid">
-                        <!-- Dynamic answers will be inserted here -->
-                    </div>
-                    
-                    <div class="question-navigation">
-                        <button class="nav-button prev-button" onclick="previousQuestion()" disabled>
-                            <i class="fas fa-arrow-left"></i>
-                            Previous
-                        </button>
-                        <button class="nav-button next-button" onclick="nextQuestion()" disabled>
-                            Next
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
+          <div class="hero-visual">
+            <div class="floating-cards">
+              <div
+                class="card card-1"
+                role="button"
+                tabindex="0"
+                aria-label="Academic Track"
+              >
+                <i class="fas fa-graduation-cap"></i>
+                <span>Academic</span>
+              </div>
+              <div
+                class="card card-2"
+                role="button"
+                tabindex="0"
+                aria-label="Technical Track"
+              >
+                <i class="fas fa-microchip"></i>
+                <span>Technical</span>
+              </div>
+              <div
+                class="card card-3"
+                role="button"
+                tabindex="0"
+                aria-label="Creative Track"
+              >
+                <i class="fas fa-palette"></i>
+                <span>Creative</span>
+              </div>
+              <div
+                class="card card-4"
+                role="button"
+                tabindex="0"
+                aria-label="Business Track"
+              >
+                <i class="fas fa-chart-line"></i>
+                <span>Business</span>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Results Section -->
-        <section id="results" class="results hidden">
-            <div class="results-container">
-                <div class="results-header">
-                    <h2 class="results-title">Your Recommended Paths</h2>
-                    <p class="results-subtitle">Based on your answers, here are the educational paths that align with your interests and strengths</p>
-                </div>
-                
-                <div class="paths-grid" id="paths-grid">
-                    <!-- Dynamic path recommendations will be inserted here -->
-                </div>
-                
-                <div class="results-actions">
-                    <button class="secondary-button" onclick="retakeQuiz()">
-                        <i class="fas fa-redo"></i>
-                        Retake Quiz
-                    </button>
-                    <button class="primary-button" onclick="downloadResults()">
-                        <i class="fas fa-download"></i>
-                        Download Results
-                    </button>
-                </div>
-            </div>
-        </section>
+      <!-- Specialized Programs Section - Premium Grid -->
+      <section id="programs" class="specialized-programs">
+        <div class="specialized-programs-container">
+          <div class="section-header">
+            <h2>Specialized Educational Programs</h2>
+            <p>
+              Explore our comprehensive range of specialized programs designed
+              to match your interests and career goals
+            </p>
+          </div>
 
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="about-content">
-                <h2 class="section-title">How It Works</h2>
-                <div class="features-grid">
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-clipboard-question"></i>
-                        </div>
-                        <h3>Answer Questions</h3>
-                        <p>Complete our comprehensive questionnaire about your interests, strengths, and career aspirations.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>AI Analysis</h3>
-                        <p>Our intelligent system analyzes your responses to understand your unique profile and preferences.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-route"></i>
-                        </div>
-                        <h3>Get Recommendations</h3>
-                        <p>Receive personalized educational path recommendations tailored to your profile and goals.</p>
-                    </div>
+          <div class="programs-grid">
+            <!-- Academic Programs -->
+            <div class="program-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i class="fas fa-graduation-cap"></i>
                 </div>
+                <div class="category-info">
+                  <h3>Academic & Research Excellence</h3>
+                  <p>Advanced academic preparation for research careers</p>
+                </div>
+              </div>
+              <div class="programs-list">
+                <div class="program-item">
+                  <div class="program-name">Science Stream (PCM)</div>
+                  <div class="program-details">
+                    <span class="program-duration">6-8 Years</span>
+                    <span class="program-salary">$50K-$150K+</span>
+                  </div>
+                  <div class="program-description">
+                    Perfect for STEM careers, medical school, and engineering
+                    programs
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">Science Stream (PCB)</div>
+                  <div class="program-details">
+                    <span class="program-duration">6-10 Years</span>
+                    <span class="program-salary">$60K-$200K+</span>
+                  </div>
+                  <div class="program-description">
+                    Gateway to medical, biological, and life sciences careers
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">Liberal Arts & Humanities</div>
+                  <div class="program-details">
+                    <span class="program-duration">5-8 Years</span>
+                    <span class="program-salary">$40K-$120K+</span>
+                  </div>
+                  <div class="program-description">
+                    Develops critical thinking, communication, and cultural
+                    understanding
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">International Baccalaureate</div>
+                  <div class="program-details">
+                    <span class="program-duration">5-7 Years</span>
+                    <span class="program-salary">$55K-$140K+</span>
+                  </div>
+                  <div class="program-description">
+                    Globally recognized program for international careers
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+
+            <!-- Technical Programs -->
+            <div class="program-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i class="fas fa-microchip"></i>
+                </div>
+                <div class="category-info">
+                  <h3>Technology & Engineering</h3>
+                  <p>Cutting-edge technical education for innovators</p>
+                </div>
+              </div>
+              <div class="programs-list">
+                <div class="program-item">
+                  <div class="program-name">
+                    Computer Science & Software Engineering
+                  </div>
+                  <div class="program-details">
+                    <span class="program-duration">6 Years</span>
+                    <span class="program-salary">$70K-$250K+</span>
+                  </div>
+                  <div class="program-description">
+                    High-demand field with excellent career prospects and
+                    innovation opportunities
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">
+                    Electrical & Electronics Engineering
+                  </div>
+                  <div class="program-details">
+                    <span class="program-duration">6 Years</span>
+                    <span class="program-salary">$65K-$150K+</span>
+                  </div>
+                  <div class="program-description">
+                    Core engineering discipline powering modern technology
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">Data Science & AI</div>
+                  <div class="program-details">
+                    <span class="program-duration">6-8 Years</span>
+                    <span class="program-salary">$80K-$200K+</span>
+                  </div>
+                  <div class="program-description">
+                    Extract insights from data and build intelligent systems
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">Cybersecurity</div>
+                  <div class="program-details">
+                    <span class="program-duration">5-7 Years</span>
+                    <span class="program-salary">$75K-$180K+</span>
+                  </div>
+                  <div class="program-description">
+                    Protect organizations from cyber threats in our digital
+                    world
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Creative Programs -->
+            <div class="program-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i class="fas fa-palette"></i>
+                </div>
+                <div class="category-info">
+                  <h3>Creative Arts & Innovation</h3>
+                  <p>Nurture artistic talents and creative thinking</p>
+                </div>
+              </div>
+              <div class="programs-list">
+                <div class="program-item">
+                  <div class="program-name">Digital Media & Game Design</div>
+                  <div class="program-details">
+                    <span class="program-duration">6 Years</span>
+                    <span class="program-salary">$45K-$130K+</span>
+                  </div>
+                  <div class="program-description">
+                    Create immersive digital experiences and interactive
+                    entertainment
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">
+                    Graphic Design & Visual Communication
+                  </div>
+                  <div class="program-details">
+                    <span class="program-duration">5-6 Years</span>
+                    <span class="program-salary">$35K-$90K+</span>
+                  </div>
+                  <div class="program-description">
+                    Communicate ideas through visual design and branding
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">Film & Video Production</div>
+                  <div class="program-details">
+                    <span class="program-duration">6 Years</span>
+                    <span class="program-salary">$40K-$150K+</span>
+                  </div>
+                  <div class="program-description">
+                    Tell stories through moving images and sound
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">Architecture & Interior Design</div>
+                  <div class="program-details">
+                    <span class="program-duration">7-8 Years</span>
+                    <span class="program-salary">$50K-$140K+</span>
+                  </div>
+                  <div class="program-description">
+                    Design buildings and spaces that shape how people live and
+                    work
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Programs -->
+            <div class="program-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="category-info">
+                  <h3>Business & Entrepreneurship</h3>
+                  <p>Develop leadership and business acumen</p>
+                </div>
+              </div>
+              <div class="programs-list">
+                <div class="program-item">
+                  <div class="program-name">
+                    Business Administration & Management
+                  </div>
+                  <div class="program-details">
+                    <span class="program-duration">6-8 Years</span>
+                    <span class="program-salary">$55K-$180K+</span>
+                  </div>
+                  <div class="program-description">
+                    Comprehensive business education for leadership roles
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">Entrepreneurship & Innovation</div>
+                  <div class="program-details">
+                    <span class="program-duration">6 Years</span>
+                    <span class="program-salary">$40K-$500K+</span>
+                  </div>
+                  <div class="program-description">
+                    Learn to start and scale innovative businesses
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">Finance & Investment Banking</div>
+                  <div class="program-details">
+                    <span class="program-duration">6-8 Years</span>
+                    <span class="program-salary">$65K-$250K+</span>
+                  </div>
+                  <div class="program-description">
+                    Manage money and investments in global financial markets
+                  </div>
+                </div>
+                <div class="program-item">
+                  <div class="program-name">Marketing & Digital Commerce</div>
+                  <div class="program-details">
+                    <span class="program-duration">6 Years</span>
+                    <span class="program-salary">$45K-$130K+</span>
+                  </div>
+                  <div class="program-description">
+                    Master modern marketing in the digital age
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Questionnaire Section - Apple Enhanced Design -->
+      <section
+        id="questionnaire"
+        class="questionnaire hidden"
+        role="main"
+        aria-live="polite"
+      >
+        <div class="questionnaire-container">
+          <!-- Enhanced Progress Bar -->
+          <div
+            class="progress-bar"
+            role="progressbar"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div class="progress-fill"></div>
+            <div class="progress-text">
+              Question <span id="current-question">1</span> of
+              <span id="total-questions">8</span>
+            </div>
+          </div>
+
+          <!-- Premium Question Card -->
+          <div class="question-card">
+            <h2 class="question-title" id="question-title"></h2>
+            <p class="question-subtitle" id="question-subtitle"></p>
+
+            <div class="answers-grid" id="answers-grid" role="radiogroup">
+              <!-- Dynamic content populated by JavaScript -->
+            </div>
+
+            <!-- Enhanced Navigation -->
+            <div class="question-navigation">
+              <button
+                class="nav-button prev-button"
+                onclick="previousQuestion()"
+                aria-label="Previous question"
+              >
+                <i class="fas fa-arrow-left"></i>
+                <span>Previous</span>
+              </button>
+              <button
+                class="nav-button next-button"
+                onclick="nextQuestion()"
+                aria-label="Next question"
+              >
+                <span>Next</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Section - Apple Premium Layout -->
+      <section id="results" class="results hidden" role="main">
+        <div class="results-container">
+          <!-- Enhanced Results Header -->
+          <div class="results-header">
+            <h2 class="results-title">Your Educational Path Results</h2>
+            <p class="results-subtitle">
+              Based on your responses, here are your personalized educational
+              path recommendations with detailed insights and actionable
+              guidance.
+            </p>
+          </div>
+
+          <!-- Main Results Layout -->
+          <div class="results-layout">
+            <!-- Primary Results -->
+            <div class="paths-section">
+              <h3>
+                <i class="fas fa-chart-bar"></i>
+                Recommended Paths
+              </h3>
+              <div class="paths-grid" id="paths-grid">
+                <!-- Dynamic content populated by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Enhanced Saved Paths Sidebar -->
+            <aside class="saved-section" role="complementary">
+              <h3>
+                <i class="fas fa-heart"></i>
+                Saved Paths
+              </h3>
+              <div class="saved-paths-list" id="saved-paths-list">
+                <!-- Dynamic content populated by JavaScript -->
+              </div>
+            </aside>
+          </div>
+
+          <!-- Enhanced Action Buttons -->
+          <div class="results-actions">
+            <button
+              class="primary-button"
+              onclick="downloadResults()"
+              aria-label="Download detailed results"
+            >
+              <i class="fas fa-download"></i>
+              <span>Download Report</span>
+            </button>
+            <button
+              class="secondary-button"
+              onclick="retakeQuiz()"
+              aria-label="Retake assessment"
+            >
+              <i class="fas fa-redo"></i>
+              <span>Retake Assessment</span>
+            </button>
+            <button
+              class="secondary-button"
+              onclick="shareResults()"
+              aria-label="Share results"
+            >
+              <i class="fas fa-share"></i>
+              <span>Share Results</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section - Apple Enhanced Features -->
+      <section id="about" class="about">
+        <div class="about-content">
+          <h2 class="section-title">How PathFinder Works</h2>
+          <p class="section-subtitle">
+            Our advanced AI system analyzes your responses to provide
+            personalized educational guidance
+          </p>
+
+          <div class="features-grid">
+            <div class="feature">
+              <div class="feature-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3>Intelligent Assessment</h3>
+              <p>
+                Our carefully crafted questionnaire uses advanced psychological
+                principles to understand your unique learning style, interests,
+                and career preferences.
+              </p>
+              <div class="feature-details">
+                <span class="detail-badge">8 Questions</span>
+                <span class="detail-badge">AI-Powered</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Precision Analysis</h3>
+              <p>
+                Advanced algorithms analyze your responses against thousands of
+                educational pathways to calculate precise compatibility scores
+                and recommendations.
+              </p>
+              <div class="feature-details">
+                <span class="detail-badge">90%+ Accuracy</span>
+                <span class="detail-badge">Real-time</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="feature-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3>Comprehensive Guidance</h3>
+              <p>
+                Receive detailed recommendations including career prospects,
+                salary ranges, top universities, scholarship opportunities, and
+                actionable next steps.
+              </p>
+              <div class="feature-details">
+                <span class="detail-badge">20+ Paths</span>
+                <span class="detail-badge">Detailed Info</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Features -->
+          <div class="additional-features">
+            <div class="feature-row">
+              <div class="feature-item">
+                <i class="fas fa-clock"></i>
+                <span>Complete in 5 minutes</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile optimized</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Privacy protected</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-download"></i>
+                <span>Downloadable results</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Enhanced Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <i class="fas fa-compass"></i>
-                <span>PathFinder</span>
-            </div>
-            <p>&copy; 2024 PathFinder. Helping students navigate their educational journey.</p>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <i class="fas fa-compass"></i>
+          PathFinder
         </div>
+        <p>
+          &copy; 2024 PathFinder Educational Guidance. Empowering students to
+          navigate their educational journey.
+        </p>
+
+        <div class="footer-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
     </footer>
 
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Analyzing your responses...</p>
+      </div>
+    </div>
+
     <script src="script.js"></script>
-</body>
-</html> 
+  </body>
+</html>
